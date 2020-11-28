@@ -12,15 +12,17 @@ public class Alumno {
     String nombre;
     String apellido;
     int carnet;
+    PadreFamiliar padre;
 
     //Metodo Constructor
     public Alumno() {
     }
 
-    public Alumno(String nombre, String apellido, int carnet) {
+    public Alumno(String nombre, String apellido, int carnet, PadreFamiliar padre) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.carnet = carnet;
+        this.padre = padre;
     }
 
     //Metodos get y set
@@ -48,9 +50,17 @@ public class Alumno {
         this.carnet = carnet;
     }
 
+    public PadreFamiliar getPadre() {
+        return padre;
+    }
+
+    public void setPadre(PadreFamiliar padre) {
+        this.padre = padre;
+    }
+    
     @Override
     public String toString() {
-        return "Nombre: " + nombre + "\n" + "Apellido: " + apellido + "\n" + "Carne: " + carnet + "\n";
+        return "Informacion del alumno = " + "\n" + "Nombre: " + nombre + "\n" + "Apellido: " + apellido + "\n" + "Carne: " + carnet + "\n" + "Informacion del Padre = " + "\n" + padre + "\n";
     }
     
 }

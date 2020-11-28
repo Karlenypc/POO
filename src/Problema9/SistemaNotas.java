@@ -46,6 +46,7 @@ public class SistemaNotas {
         for (int i = 0; i < contador; i++) {
             if (examenes[i] != null) {
                 System.out.print(examenes[i].getAlumno().toString());
+                //System.out.print(examenes[i]..toString());
                 System.out.println(examenes[i].toString());
             }
         }

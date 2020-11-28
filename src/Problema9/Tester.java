@@ -13,6 +13,7 @@ public class Tester {
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
         SistemaNotas sistema = new SistemaNotas();
+        //Curso c = new Curso(); 
 
         int optMenu = 0;
         System.out.println("Bienvenido por favor seleccione la opción que desea realizar: ");
@@ -64,6 +65,14 @@ public class Tester {
                         System.out.print("Digite la nota obtenida:");
                         e.setNota(input.nextInt());
                         e.setAlumno(a);
+                        PadreFamiliar p = new PadreFamiliar();
+                        System.out.print("Digite el nombre del encargado legal: ");
+                        p.setNombre(input.next());
+                        System.out.print("Digite el apellido: ");
+                        p.setApellido(input.next());
+                        System.out.print("Digite la edad: ");
+                        p.setEdad(input.nextInt());
+                        a.setPadre(p);
                         sistema.agregarEx(e);
                     }
                     break;
@@ -88,9 +97,9 @@ public class Tester {
                         System.out.println("Código Curso: " + c.getCodigoCurso());
                         System.out.println("Horario Curso: " + c.getHorarioCurso());
                         System.out.println("********************************");
-                        System.out.println("Total notas registradas: ");
+                        System.out.println("*** Total notas registradas *** ");
                         sistema.mostrarExamenes();
-                        
+
                     } else {
                         System.out.println("No existen registros en el sistema.");
                     }
