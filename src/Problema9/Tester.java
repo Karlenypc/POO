@@ -8,23 +8,25 @@ import java.util.Scanner;
  */
 public class Tester {
 
-    static Curso c = null;
-
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
         SistemaNotas sistema = new SistemaNotas();
-        //Curso c = new Curso(); 
+        Curso c = new Curso();
+        Alumno a = null;
+        Examen e = null;
 
         int optMenu = 0;
         System.out.println("Bienvenido por favor seleccione la opción que desea realizar: ");
 
         do {
+
             System.out.println();
             System.out.println("1) Agregar información del curso.");
             System.out.println("2) Agregar nota. ");
-            System.out.println("3) Eliminar nota. ");
-            System.out.println("4) Mostrar notas registradas. ");
-            System.out.println("5) Salir. ");
+            System.out.println("3) Agregar información familiar. ");
+            System.out.println("4) Eliminar nota. ");
+            System.out.println("5) Mostrar notas registradas. ");
+            System.out.println("6) Salir. ");
 
             optMenu = input.nextInt();
 
@@ -32,7 +34,6 @@ public class Tester {
 
                 case 1: {
 
-                    c = new Curso();
                     System.out.print("Ingrese el Nombre Completo del profesor: ");
                     c.setNombreProfesor(input.next());
                     System.out.print("Ingrese la materia: ");
@@ -50,14 +51,14 @@ public class Tester {
                         System.out.println("Primero debe ingresar la información del curso.");
 
                     } else {
-                        Alumno a = new Alumno();
+                        a = new Alumno();
                         System.out.print("Digite el nombre del alumno:");
                         a.setNombre(input.next());
                         System.out.print("Digite el apellido:");
                         a.setApellido(input.next());
                         System.out.print("Digite el carne:");
                         a.setCarnet(input.nextInt());
-                        Examen e = new Examen();
+                        e = new Examen();
                         System.out.print("Digite los puntos totales del parcial:");
                         e.setPuntosTotal(input.nextInt());
                         System.out.print("Digite los puntos obtenidos:");
@@ -65,20 +66,29 @@ public class Tester {
                         System.out.print("Digite la nota obtenida:");
                         e.setNota(input.nextInt());
                         e.setAlumno(a);
-                        PadreFamiliar p = new PadreFamiliar();
-                        System.out.print("Digite el nombre del encargado legal: ");
-                        p.setNombre(input.next());
-                        System.out.print("Digite el apellido: ");
-                        p.setApellido(input.next());
-                        System.out.print("Digite la edad: ");
-                        p.setEdad(input.nextInt());
-                        a.setPadre(p);
                         sistema.agregarEx(e);
                     }
                     break;
                 }
 
                 case 3: {
+
+                    PadreFamiliar p = new PadreFamiliar();
+                    System.out.print("Digite el nombre del Padre: ");
+                    p.setNombre(input.next());
+                    System.out.print("Digite el apellido: ");
+                    p.setApellido(input.next());
+                    a.setPadre(p);
+                    PadreFamiliar m = new PadreFamiliar();
+                    System.out.print("Digite el nombre de la Madre: ");
+                    m.setNombre(input.next());
+                    System.out.print("Digite el apellido: ");
+                    m.setApellido(input.next());
+                    a.setMadre(m);
+                    break;
+                }
+
+                case 4: {
 
                     if (sistema.contador == 0) {
                         System.out.println("No existen notas registradas.");
@@ -89,7 +99,7 @@ public class Tester {
                     break;
                 }
 
-                case 4: {
+                case 5: {
                     if (sistema.contador != 0) {
                         System.out.println("****Curso**** ");
                         System.out.println("Profesor: " + c.getNombreProfesor());
@@ -99,6 +109,9 @@ public class Tester {
                         System.out.println("********************************");
                         System.out.println("*** Total notas registradas *** ");
                         sistema.mostrarExamenes();
+                        if (a.padre != null || a.madre != null) {
+                            e.getAlumno().imprimirDatosFamiliar();
+                        }
 
                     } else {
                         System.out.println("No existen registros en el sistema.");
@@ -108,7 +121,7 @@ public class Tester {
 
             }
 
-        } while (optMenu < 5);
+        } while (optMenu < 6);
 
     }
 

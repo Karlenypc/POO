@@ -17,7 +17,7 @@ public class Curso {
     //Metodos constructor 
     public Curso() {
     }
-
+    
     public Curso(String materia, String codigoCurso, String horarioCurso, String nombreProfesor) {
         this.materia = materia;
         this.codigoCurso = codigoCurso;

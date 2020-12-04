@@ -10,15 +10,13 @@ public class PadreFamiliar {
     //Propiedades 
     String nombre;
     String apellido; 
-    int edad;
     
     public PadreFamiliar() {
     }
     
-    public PadreFamiliar(String nombre, String apellido, int edad) {
+    public PadreFamiliar(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.edad = edad;
     }
     
     public String getNombre() {
@@ -37,17 +35,9 @@ public class PadreFamiliar {
         this.apellido = apellido;
     }
 
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
     @Override
     public String toString() {
-        return  "Nombre: " + nombre + "\n" + "Apellido: " + apellido + "\n" + "Edad: " + edad + "\n";
+        return  "Nombre: " + nombre + "\n" + "Apellido: " + apellido + "\n";
     }
     
 }
