@@ -27,6 +27,18 @@ public class Alumno {
         this.madre = madre;
     }
     
+    //Sobrecarga metodo constructor 
+    public Alumno(String nombre, String apellido, int carnet) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.carnet = carnet;
+    }
+
+    public Alumno(PadreFamiliar padre, PadreFamiliar madre) {
+        this.padre = padre;
+        this.madre = madre;
+    }
+    
     //Metodo para imprimir la info Familiar
     public void imprimirDatosFamiliar() {
         System.out.println("**Informacion del encargado legal**");

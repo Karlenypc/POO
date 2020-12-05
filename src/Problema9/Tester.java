@@ -19,7 +19,6 @@ public class Tester {
         System.out.println("Bienvenido por favor seleccione la opción que desea realizar: ");
 
         do {
-
             System.out.println();
             System.out.println("1) Agregar información del curso.");
             System.out.println("2) Agregar nota. ");
@@ -109,6 +108,7 @@ public class Tester {
                         System.out.println("********************************");
                         System.out.println("*** Total notas registradas *** ");
                         sistema.mostrarExamenes();
+                        //Uso metodo imprimir info PadreFamiliar
                         if (a.padre != null || a.madre != null) {
                             e.getAlumno().imprimirDatosFamiliar();
                         }
@@ -116,7 +116,7 @@ public class Tester {
                     } else {
                         System.out.println("No existen registros en el sistema.");
                     }
-                    break;
+                    break; //Uso del break dentro de un ciclo
                 }
 
             }
