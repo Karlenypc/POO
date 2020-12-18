@@ -20,7 +20,7 @@ public class Tester {
 
         do {
             System.out.println();
-            System.out.println("1) Agregar información del curso.");
+            System.out.println("1) Agregar informaciónx del curso.");
             System.out.println("2) Agregar nota. ");
             System.out.println("3) Agregar información familiar. ");
             System.out.println("4) Eliminar nota. ");
