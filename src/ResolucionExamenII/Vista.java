@@ -57,7 +57,5 @@ public class Vista {
         return resultado;
     }
     
-    public int volumen(Parlante x) {
-        
-    }
+   
 }
