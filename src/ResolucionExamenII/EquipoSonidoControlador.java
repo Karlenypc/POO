@@ -35,7 +35,9 @@ public class EquipoSonidoControlador {
                 case 5:
                     e.eliminarAudio();
                     break;
-                    
+                case 6:
+                    vst.volumen();
+                    break;
             }
 
         } while (true);

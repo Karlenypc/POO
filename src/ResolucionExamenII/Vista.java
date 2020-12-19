@@ -56,6 +56,11 @@ public class Vista {
         }
         return resultado;
     }
-    
-   
+
+    public int volumen() {
+        int resultado = 0;
+        System.out.println("Ingrese el volumen deseado: ");
+        resultado = in.nextInt();
+        return resultado;
+    }
 }
