@@ -10,5 +10,34 @@ package ResolucionExamenII;
  * @author Karlenypc
  */
 public class EquipoSonidoControlador {
-    
+
+    public void iniciar() {
+        EquipoSonido e = new EquipoSonido();
+        Vista vst = new Vista();
+        
+        int menu = 0;
+        e.inicializarLista();
+        do {
+            vst.getOpcionMenu();
+            switch (menu) {
+                case 1: 
+                    e.mostrarlistaOrden();
+                    break;
+                case 2:
+                
+                    break;
+                case 3:
+                    e.mostrarlistaCompleta();
+                    break;
+                case 4:
+                    vst.agregarAudio();
+                    break;
+                case 5:
+                    e.eliminarAudio();
+                    break;
+                    
+            }
+
+        } while (true);
+    }
 }

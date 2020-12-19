@@ -7,29 +7,14 @@ package ResolucionExamenII;
  */
 public class Parlante {
     
-    String nombre;
     int volumen;
-    boolean habilitado;
-    int direcionsenal;
+    boolean habilitado = true;
     
     public Parlante() {
     }
-    
-    public Parlante(int volumen, int direcionsenal) {
-        this.volumen = volumen;
-        this.direcionsenal = direcionsenal;
-    }
-
+   
     public void sonar(String audio) {
         System.out.println("Sonando: " + audio);
-    }
-    
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public int getVolumen() {
@@ -40,14 +25,6 @@ public class Parlante {
         this.volumen = volumen;
     }
 
-    public int getDirecionsenal() {
-        return direcionsenal;
-    }
-
-    public void setDirecionsenal(int direcionsenal) {
-        this.direcionsenal = direcionsenal;
-    }
-
     public boolean isHabilitado() {
         return habilitado;
     }
@@ -55,5 +32,5 @@ public class Parlante {
     public void setHabilitado(boolean habilitado) {
         this.habilitado = habilitado;
     }
-    
+      
 }
